@@ -1,0 +1,232 @@
+/* Traveller area: dashboard, bookings, booking form, profile */
+.dash-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.4rem;
+}
+.dash-head .display {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin: 0;
+}
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+.stat {
+  padding: 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  position: relative;
+  overflow: hidden;
+}
+.stat:first-child {
+  background: linear-gradient(140deg, #202b33, var(--panel));
+  border-top: 3px solid var(--amber);
+}
+.stat__n {
+  font: 600 3.6rem/1 var(--display);
+  display: block;
+}
+.stat__l {
+  font: 500 0.7rem/1 var(--body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dash-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.block-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+.block-title h2 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+.block-title a {
+  font-size: 0.8rem;
+  color: var(--amber);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.quick {
+  display: grid;
+  gap: 0.8rem;
+}
+.quick a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  background: var(--panel);
+  transition:
+    border-color 0.3s,
+    transform 0.3s var(--ease);
+}
+.quick a:hover {
+  border-color: var(--amber);
+  transform: translateX(5px);
+}
+.quick a::after {
+  content: "\2192";
+  color: var(--amber);
+}
+.notice {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--amber);
+  border-radius: var(--radius);
+  background: rgba(242, 168, 29, 0.08);
+  margin-bottom: 2rem;
+}
+.notice--danger {
+  border-color: var(--danger);
+  background: rgba(255, 125, 112, 0.08);
+}
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 2.5rem;
+  align-items: start;
+}
+.summary {
+  position: sticky;
+  top: 1.5rem;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-2);
+  border-top: 3px solid var(--amber);
+}
+.summary__img {
+  position: relative;
+  aspect-ratio: 16/10;
+}
+.summary__body {
+  padding: 1.4rem;
+}
+.summary dl {
+  margin: 1rem 0 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem 1rem;
+  font-size: 0.92rem;
+}
+.summary dt {
+  color: var(--muted);
+}
+.summary dd {
+  margin: 0;
+  text-align: right;
+}
+.summary .total {
+  font: 600 1.8rem var(--display);
+  color: var(--amber);
+}
+.detail-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem 2rem;
+}
+.detail-list div span {
+  display: block;
+  font: 500 0.66rem/1 var(--body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.timeline {
+  border-left: 2px solid var(--line);
+  margin: 1rem 0 0 0.4rem;
+  padding-left: 1.4rem;
+  display: grid;
+  gap: 1.1rem;
+}
+.timeline li {
+  position: relative;
+  font-size: 0.92rem;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -1.95rem;
+  top: 0.35rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--amber);
+  border-radius: 50%;
+}
+.timeline small {
+  display: block;
+  color: var(--muted);
+}
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+}
+.tabs a {
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.tabs a.is-active {
+  background: var(--amber);
+  color: #14100a;
+  border-color: var(--amber);
+  font-weight: 700;
+}
+.inline-filter {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.6rem;
+}
+.inline-filter .field {
+  margin: 0;
+}
+@media (max-width: 1000px) {
+  .stat-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dash-grid,
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+  .summary {
+    position: static;
+  }
+}
+@media (max-width: 620px) {
+  .stat-row,
+  .detail-list,
+  .inline-filter {
+    grid-template-columns: 1fr;
+  }
+}
